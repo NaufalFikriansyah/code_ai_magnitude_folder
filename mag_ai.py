@@ -31,7 +31,6 @@ def cal_par(st_a):
     return pa, pv, peakd, r, tauc, tp, tva, piv, iv2, cav, cvad, cvav, cvaa
 
 
-
 df = pd.read_csv("allevent_jawabarat.sh", delim_whitespace=True, names=['python','script','OT','lat','lon','dep','mag']) #generated from create_sh.py
 df_sta = pd.read_excel("station.xlsx")
 file_pga = open("mag_ml_2020_detik10.txt","w") #nama file sesuaikan
