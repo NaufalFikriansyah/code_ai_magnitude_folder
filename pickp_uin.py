@@ -89,7 +89,7 @@ def plot_nottrig(stream, pn_preds, eqt_preds, outf):
     plt.close()
 
 read_event = pd.read_csv("/mnt/c/Users/naufa/OneDrive/Documents/AI Magnitude/201906/events_2018-2022.txt", delimiter='|', skipinitialspace=True ,names=["id", "ot", "Latitude", "Longitude", "Depth", "Mag", "Type M"])
-#data event
+#list of seismic event
 for i,event in read_event.iterrows():
     event_time = UTCDateTime(event["ot"]) #UTCDateTime("20230520193313")
     eq_lat = event["Latitude"] #-7.41708231
@@ -129,7 +129,7 @@ for i,event in read_event.iterrows():
         
 
 
-    df = pd.read_excel("station.xlsx")
+    df = pd.read_excel("station.xlsx") #geophysics station metadata
 
     outf = open(output_file, 'w')
     for file in files:

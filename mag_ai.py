@@ -32,9 +32,9 @@ def cal_par(st_a):
 
 
 
-df = pd.read_csv("allevent_jawabarat.sh", delim_whitespace=True, names=['python','script','OT','lat','lon','dep','mag'])
+df = pd.read_csv("allevent_jawabarat.sh", delim_whitespace=True, names=['python','script','OT','lat','lon','dep','mag']) #generated from create_sh.py
 df_sta = pd.read_excel("station.xlsx")
-file_pga = open("mag_ml_2020_detik10.txt","w") #nama dile sesuaikan
+file_pga = open("mag_ml_2020_detik10.txt","w") #nama file sesuaikan
 for i, eq in df.iterrows():
     dir_ms = str(eq['OT'])
     print(dir_ms)
@@ -42,7 +42,7 @@ for i, eq in df.iterrows():
     
     if not os.path.exists(data_mseed):
         continue
-    data_directory = "./gempajawabarat/"+dir_ms #directory data picking from pickp
+    data_directory = "./gempajawabarat/"+dir_ms #directory data picking from pickp_uin.py
     
     if not os.path.exists(data_directory):
         continue
