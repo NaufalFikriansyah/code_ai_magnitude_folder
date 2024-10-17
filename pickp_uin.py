@@ -88,7 +88,7 @@ def plot_nottrig(stream, pn_preds, eqt_preds, outf):
     fig.savefig(outf)
     plt.close()
 
-read_event = pd.read_csv("/mnt/c/Users/naufa/OneDrive/Documents/AI Magnitude/201906/events_2018-2022.txt", delimiter='|', skipinitialspace=True ,names=["id", "ot", "Latitude", "Longitude", "Depth", "Mag", "Type M"])
+read_event = pd.read_csv("/mnt/c/Users/naufa/OneDrive/Documents/AI Magnitude/events_2022-2024.txt", delimiter='|', skipinitialspace=True ,names=["id", "ot", "Latitude", "Longitude", "Depth", "Mag", "Type M"])
 #list of seismic event
 for i,event in read_event.iterrows():
     event_time = UTCDateTime(event["ot"]) #UTCDateTime("20230520193313")
@@ -97,11 +97,11 @@ for i,event in read_event.iterrows():
     eq_depth = event["Depth"] #81
     event_id = event_time.strftime("%Y%m%d%H%M%S")
     print(event_id)
-    data_directory = "/mnt/c/Users/naufa/OneDrive/Documents/AI Magnitude/201906/"+event_id+'/mseed' #data meseed
+    data_directory = "/mnt/c/Users/naufa/OneDrive/Documents/AI Magnitude/2024/"+event_id+'/mseed' #data meseed
     
     if not os.path.exists(data_directory):
         continue
-    out_dir = "./gempajawabarat/2019_3"+event_id #directory output
+    out_dir = "./gempajawabarat/2024/"+event_id #directory output
 
     if not os.path.exists(out_dir):
         os.makedirs(out_dir)

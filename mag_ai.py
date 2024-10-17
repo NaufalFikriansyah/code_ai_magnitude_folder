@@ -31,17 +31,17 @@ def cal_par(st_a):
     return pa, pv, peakd, r, tauc, tp, tva, piv, iv2, cav, cvad, cvav, cvaa
 
 
-df = pd.read_csv("allevent_jawabarat.sh", delim_whitespace=True, names=['python','script','OT','lat','lon','dep','mag']) #generated from create_sh.py
+df = pd.read_csv("allevent_jawabarat2022.sh", delim_whitespace=True, names=['python','script','OT','lat','lon','dep','mag']) #generated from create_sh.py
 df_sta = pd.read_excel("station.xlsx")
-file_pga = open("mag_ml_2020_detik10.txt","w") #nama file sesuaikan
+file_pga = open("mag_ml_2024_detik10.txt","w") #nama file sesuaikan
 for i, eq in df.iterrows():
     dir_ms = str(eq['OT'])
     print(dir_ms)
-    data_mseed = "/mnt/c/Users/naufa/OneDrive/Documents/AI Magnitude/201906/"+dir_ms+"/mseed" #data mseed
+    data_mseed = "/mnt/c/Users/naufa/OneDrive/Documents/AI Magnitude/2024/"+dir_ms+"/mseed" #data mseed
     
     if not os.path.exists(data_mseed):
         continue
-    data_directory = "./gempajawabarat/"+dir_ms #directory data picking from pickp_uin.py
+    data_directory = "./gempajawabarat/2024/"+dir_ms #directory data picking from pickp_uin.py
     
     if not os.path.exists(data_directory):
         continue
