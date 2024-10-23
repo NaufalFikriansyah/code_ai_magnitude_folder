@@ -33,7 +33,7 @@ def cal_par(st_a):
 
 df = pd.read_csv("allevent_jawabarat2022.sh", delim_whitespace=True, names=['python','script','OT','lat','lon','dep','mag']) #generated from create_sh.py
 df_sta = pd.read_excel("station.xlsx")
-file_pga = open("mag_ml_2024_detik10.txt","w") #nama file sesuaikan
+file_pga = open("mag_ml_2024_detik8.txt","w") #nama file sesuaikan
 for i, eq in df.iterrows():
     dir_ms = str(eq['OT'])
     print(dir_ms)
@@ -76,7 +76,7 @@ for i, eq in df.iterrows():
         station_longitude = metadata['Long'].values[0]
         dist = locations2degrees(eq_lat, eq_lon, station_latitude, station_longitude)
         dist *= 111
-        st.trim(pickp-0.5,pickp+10)
+        st.trim(pickp-0.5,pickp+8)
         if len(st) == 0:
             continue
         pa, pv, peakd, r, tauc, tp, tva, piv, iv2, cav, cvad, cvav, cvaa = cal_par(st.copy())
